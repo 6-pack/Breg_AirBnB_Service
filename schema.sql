@@ -28,4 +28,7 @@ INSERT INTO homes VALUES (3, 30, 3, 3, 3, 3, 3, 3);
 INSERT INTO homes VALUES (4, 40, 4, 4, 4, 4, 4, 4);
 INSERT INTO homes VALUES (5, 50, 5, 5, 5, 5, 5, 5);
 
+--ID,houseID,Start,End
+-- INSERT INTO reservations
+
 
