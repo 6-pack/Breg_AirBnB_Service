@@ -1,6 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+const divStyle = {
+  color: 'red',
+  backgroundColor: 'black',
+};
 
 class App extends React.Component {
   constructor(props) {
@@ -12,7 +16,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
+      <div style={divStyle}>
         <h1>HI IM WORKING!</h1>
       </div>
     );
