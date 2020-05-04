@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 const { Client } = require('pg');
 
 const client = new Client('postgres:postgres:@localhost:5432/air_bnb');
