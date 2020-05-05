@@ -2,13 +2,14 @@
 /* eslint-disable react/self-closing-comp */
 /* eslint-disable no-undef */
 import React from 'react';
+import ReactDOM from 'react-dom';
 import Adapter from 'enzyme-adapter-react-16';
 import Enzyme, { shallow, mount, render} from 'enzyme';
-import App from '../client/src/components/App';
+import Index from '../client/src/index';
 
 // Enzyme.configure({ adapter: new Adapter() });
 
-describe('App', () => {
+describe('Index', () => {
   it('it should be true', () => {
     const foo = true;
     expect(foo).toBe(true);
@@ -26,8 +27,8 @@ describe('A suite', () => {
 
 describe('B suite', () => {
   it('should show text', () => {
-    const wrapper = shallow(<App />);
-    const text = wrapper.find('div');
+    const wrapper = mount(<Index />);
+    const text = wrapper.find('div').first();
     expect(text.text()).toBe('HI IM WORKING!');
   });
 });
