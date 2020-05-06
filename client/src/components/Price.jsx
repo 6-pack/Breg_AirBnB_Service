@@ -9,11 +9,12 @@ class Price extends React.Component {
     };
   }
 
+
   render() {
     return (
       <div>
-        <div> $108/ per night </div>
-        <div>★4.96(191 reviews)</div>
+        <div> {this.props.price.price}/ per night </div>
+        <div>★{this.props.price.rating}({this.props.price.reviews} reviews)</div>
       </div>
     );
   }

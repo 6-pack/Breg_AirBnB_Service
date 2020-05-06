@@ -20,6 +20,24 @@ class App extends React.Component {
     super(props);
 
     this.state = {
+      price: {
+        price: 108,
+        rating: 4.96,
+        reviews: 191,
+      },
+      dates: {
+        startDate: 'Select-Date',
+        endDate: 'Select-Date',
+      },
+      guests: 4,
+      fees: {
+        price: 108,
+        days: 2,
+        cleaning: 215,
+        service: 215,
+        tax: 52,
+        total: 410,
+      },
     };
   }
 
@@ -27,13 +45,13 @@ class App extends React.Component {
     return (
       <div>
         <Boxed>
-          <Price />
+          <Price price={this.state.price} />
           <hr />
-          <Dates />
+          <Dates dates={this.state.dates} />
           <br />
-          <Guests />
+          <Guests guest-limit={this.state.guests} />
           <br />
-          <Fees />
+          <Fees fees={this.state.fees} />
           <br />
           <Button />
         </Boxed>

@@ -26,7 +26,7 @@ import App from './components/App.jsx';
 //   border-color: grey;
 // `;
 
-class Other extends React.Component {
+class Index extends React.Component {
   constructor(props) {
     super(props);
 
@@ -44,4 +44,4 @@ class Other extends React.Component {
 }
 
 
-ReactDOM.render(<Other />, document.getElementById('app'));
+ReactDOM.render(<Index />, document.getElementById('app'));

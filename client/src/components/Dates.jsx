@@ -20,8 +20,8 @@ class Dates extends React.Component {
     return (
       <div>
         <div>Dates</div>
-        <Boxed><span>5/02/20</span></Boxed>
-        <Boxed><span>5/04/20</span></Boxed>
+        <Boxed><span>{this.props.dates.startDate}</span></Boxed>
+        <Boxed><span>{this.props.dates.endDate}</span></Boxed>
       </div>
     );
   }
