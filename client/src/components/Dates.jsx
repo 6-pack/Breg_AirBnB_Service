@@ -18,13 +18,20 @@ class Dates extends React.Component {
 
   render() {
     return (
-      <div>
+      <div class="format">
         <div>Dates</div>
-        <Boxed><span>{this.props.dates.startDate}</span></Boxed>
-        <Boxed><span>{this.props.dates.endDate}</span></Boxed>
+        <div class="dates">
+          <span class="leftbox">{this.props.dates.startDate}</span>
+          <span class="leftbox">{this.props.dates.endDate}</span>
+        </div>
+        <br class="clear" />
       </div>
     );
   }
 }
 
 export default Dates;
+
+
+{/* <Boxed class="alignleft">{this.props.dates.startDate}</Boxed>
+<Boxed class="alignright">{this.props.dates.endDate}</Boxed> */}

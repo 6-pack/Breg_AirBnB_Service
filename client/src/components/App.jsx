@@ -26,8 +26,8 @@ class App extends React.Component {
         reviews: 191,
       },
       dates: {
-        startDate: 'Select-Date',
-        endDate: 'Select-Date',
+        startDate: 'Check-in',
+        endDate: 'Checkout',
       },
       guests: 4,
       fees: {

@@ -28,45 +28,52 @@ class Fees extends React.Component {
 
   render() {
     return (
-      <div>
-        <div>
-          <p class="alignleft">left</p>
-          <p class="alignright">right</p>
-        </div>
-        <hr class="clear" />
+      <div class="format">
         <div>
           <p class="alignleft">
-          $108 x {this.props.fees.days} nights
+            $108 x {this.props.fees.days} nights
           </p>
           <p class="alignright">
             ${this.props.fees.price * this.props.fees.days}
           </p>
         </div>
         <hr class="clear" />
-        <div class="clear">
-          $108 x {this.props.fees.days} nights .......... $
-          {this.props.fees.price * this.props.fees.days}
+        <div>
+          <p class="alignleft">
+            Cleaning fee
+          </p>
+          <p class="alignright">
+            ${this.props.fees.cleaning}
+          </p>
         </div>
         <hr class="clear" />
         <div>
-          <Right>Cleaning fee ..........</Right>
-          <Left>${this.props.fees.cleaning}</Left>
+          <p class="alignleft">
+            Service fee
+          </p>
+          <p class="alignright">
+            ${this.props.fees.service}
+          </p>
         </div>
-        <hr />
+        <hr class="clear" />
         <div>
-          Service fee .......... $
-          {this.props.fees.service}
+          <p class="alignleft">
+            Occupancy taxes and fees
+          </p>
+          <p class="alignright">
+            ${this.props.fees.tax}
+          </p>
         </div>
-        <hr />
+        <hr class="clear" />
         <div>
-          Occupancy taxes and fees .......... $
-          {this.props.fees.tax}
+          <p class="alignleft">
+            Total
+          </p>
+          <p class="alignright">
+            ${this.props.fees.total}
+          </p>
         </div>
-        <hr />
-        <div>
-          Total .......... $
-          {this.props.fees.total}
-        </div>
+        <hr class="clear" />
       </div>
     );
   }
