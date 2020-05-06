@@ -12,7 +12,7 @@ class Guests extends React.Component {
   render() {
     return (
       <div>
-        <div>Guests</div>
+        <div class="label">Guests</div>
         <select id="Guests">
           <option value="Adults">Adults</option>
           <option value="Infants">Children</option>

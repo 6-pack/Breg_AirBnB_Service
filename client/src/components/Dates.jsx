@@ -19,9 +19,10 @@ class Dates extends React.Component {
   render() {
     return (
       <div class="format">
-        <div>Dates</div>
-        <div class="dates">
+        <div class="label">Dates</div>
+        <div class="dates box grid">
           <span class="leftbox">{this.props.dates.startDate}</span>
+          <span class="leftbox"><img src="arrow.png" width="30px" height="25px" /></span>
           <span class="leftbox">{this.props.dates.endDate}</span>
         </div>
         <br class="clear" />

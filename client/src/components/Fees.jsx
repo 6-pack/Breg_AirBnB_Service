@@ -31,41 +31,38 @@ class Fees extends React.Component {
       <div class="format">
         <div>
           <p class="alignleft">
-            $108 x {this.props.fees.days} nights
+            ${this.props.fees.price} x {this.props.fees.days} nights
           </p>
           <p class="alignright">
             ${this.props.fees.price * this.props.fees.days}
           </p>
         </div>
-        <hr class="clear" />
-        <div>
+        {/* <hr class="clear" /> */}
+        <div class="bb clear">
           <p class="alignleft">
-            Cleaning fee
+            Cleaning fee <img src="rbi.png" width="17" height="17" />
           </p>
           <p class="alignright">
             ${this.props.fees.cleaning}
           </p>
         </div>
-        <hr class="clear" />
-        <div>
+        <div class="bb clear">
           <p class="alignleft">
-            Service fee
+            Service fee <img src="rbi.png" width="17" height="17" />
           </p>
           <p class="alignright">
             ${this.props.fees.service}
           </p>
         </div>
-        <hr class="clear" />
-        <div>
+        <div class="bb clear">
           <p class="alignleft">
-            Occupancy taxes and fees
+            Occupancy taxes and fees <img src="rbi.png" width="17" height="17" />
           </p>
           <p class="alignright">
             ${this.props.fees.tax}
           </p>
         </div>
-        <hr class="clear" />
-        <div>
+        <div class="bb clear total">
           <p class="alignleft">
             Total
           </p>
@@ -73,7 +70,7 @@ class Fees extends React.Component {
             ${this.props.fees.total}
           </p>
         </div>
-        <hr class="clear" />
+        <br class="clear"></br>
       </div>
     );
   }

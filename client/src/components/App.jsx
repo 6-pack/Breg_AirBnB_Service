@@ -21,7 +21,7 @@ class App extends React.Component {
 
     this.state = {
       price: {
-        price: 108,
+        price: 104,
         rating: 4.96,
         reviews: 191,
       },
@@ -31,12 +31,12 @@ class App extends React.Component {
       },
       guests: 4,
       fees: {
-        price: 108,
+        price: 104,
         days: 2,
-        cleaning: 215,
-        service: 215,
-        tax: 52,
-        total: 410,
+        cleaning: 100,
+        service: 43,
+        tax: 51,
+        total: 402,
       },
     };
   }
@@ -46,7 +46,7 @@ class App extends React.Component {
       <div>
         <Boxed>
           <Price price={this.state.price} />
-          <hr />
+          <br />
           <Dates dates={this.state.dates} />
           <br />
           <Guests guest-limit={this.state.guests} />

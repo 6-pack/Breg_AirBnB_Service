@@ -12,9 +12,17 @@ class Price extends React.Component {
 
   render() {
     return (
-      <div>
-        <div> {this.props.price.price}/ per night </div>
-        <div>★{this.props.price.rating}({this.props.price.reviews} reviews)</div>
+      <div class="bb">
+        <div>
+          <span class="price">${this.props.price.price} </span>
+          <span class="label">per night</span>
+        </div>
+        <div>
+          <span class="star">★</span>
+          <span class ="label">{this.props.price.rating}</span>
+          <span class ="rating">({this.props.price.reviews} reviews)</span>
+        </div>
+        <br class="bb"></br>
       </div>
     );
   }
