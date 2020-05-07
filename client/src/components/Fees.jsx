@@ -28,49 +28,49 @@ class Fees extends React.Component {
 
   render() {
     return (
-      <div class="format">
+      <div className="format">
         <div>
-          <p class="alignleft">
+          <p className="alignleft">
             ${this.props.fees.price} x {this.props.fees.days} nights
           </p>
-          <p class="alignright">
+          <p className="alignright">
             ${this.props.fees.price * this.props.fees.days}
           </p>
         </div>
         {/* <hr class="clear" /> */}
-        <div class="bb clear">
-          <p class="alignleft">
-            Cleaning fee <img src="rbi.png" width="17" height="17" />
+        <div className="bb clear">
+          <p className="alignleft">
+            Cleaning fee <img src="rbi.png" alt="" width="17" height="17" />
           </p>
-          <p class="alignright">
+          <p className="alignright">
             ${this.props.fees.cleaning}
           </p>
         </div>
-        <div class="bb clear">
-          <p class="alignleft">
-            Service fee <img src="rbi.png" width="17" height="17" />
+        <div className="bb clear">
+          <p className="alignleft">
+            Service fee <img src="rbi.png" alt="" width="17" height="17" />
           </p>
-          <p class="alignright">
+          <p className="alignright">
             ${this.props.fees.service}
           </p>
         </div>
-        <div class="bb clear">
-          <p class="alignleft">
-            Occupancy taxes and fees <img src="rbi.png" width="17" height="17" />
+        <div className="bb clear">
+          <p className="alignleft">
+            Occupancy taxes and fees <img src="rbi.png" alt="" width="17" height="17" />
           </p>
-          <p class="alignright">
+          <p className="alignright">
             ${this.props.fees.tax}
           </p>
         </div>
-        <div class="bb clear total">
-          <p class="alignleft">
+        <div className="bb clear total">
+          <p className="alignleft">
             Total
           </p>
-          <p class="alignright">
+          <p className="alignright">
             ${this.props.fees.total}
           </p>
         </div>
-        <br class="clear"></br>
+        <br className="clear" />
       </div>
     );
   }

@@ -12,7 +12,11 @@ class Guests extends React.Component {
   render() {
     return (
       <div>
-        <div class="label">Guests</div>
+        <div className="label">Guests</div>
+        <div className="dates box grid guests">
+          3 guests
+        </div>
+        <br className="clear" />
         <select id="Guests">
           <option value="Adults">Adults</option>
           <option value="Infants">Children</option>

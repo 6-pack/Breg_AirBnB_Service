@@ -31,7 +31,7 @@ class Button extends React.Component {
       <div>
         <Btn>Reserve</Btn>
         {/* <br /> */}
-        <div class="text">You wont be charged yet</div>
+        <div className="text">You wont be charged yet</div>
       </div>
     );
   }
