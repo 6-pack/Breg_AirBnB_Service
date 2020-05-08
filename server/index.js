@@ -10,7 +10,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 
-app.get('/info', (req, res) => {
+app.get('/data', (req, res) => {
   const queryStr = 'SELECT * FROM homes';
 
   db.query(queryStr, (err, result) => {

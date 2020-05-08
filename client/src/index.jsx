@@ -1,14 +1,32 @@
+/* eslint-disable import/extensions */
 /* eslint-disable no-undef */
 import React from 'react';
 import ReactDOM from 'react-dom';
+// import styled from 'styled-components';
 import App from './components/App.jsx';
 
-const divStyle = {
-  color: 'red',
-  backgroundColor: 'black',
-};
+// const divStyle = {
+//   color: 'red',
+//   backgroundColor: 'black',
+// };
 
-class Other extends React.Component {
+// const Title = styled.h1`
+//   font-size: 1.5em;
+//   text-align: center;
+//   color: white;
+//   border: 2px solid;
+//   border-color: black;
+//   border-radius: 7px;
+// `;
+
+// const Boxed = styled.section`
+//   padding: 2em;
+//   background: white;
+//   border: 1px solid;
+//   border-color: grey;
+// `;
+
+class Index extends React.Component {
   constructor(props) {
     super(props);
 
@@ -20,11 +38,10 @@ class Other extends React.Component {
     return (
       <div>
         <App />
-        <h1 style={divStyle}>IM RENDERING</h1>
       </div>
     );
   }
 }
 
 
-ReactDOM.render(<Other />, document.getElementById('app'));
+ReactDOM.render(<Index />, document.getElementById('app'));
