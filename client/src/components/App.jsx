@@ -1,3 +1,4 @@
+/* eslint-disable react/destructuring-assignment */
 /* eslint-disable import/extensions */
 /* eslint-disable no-undef */
 import React from 'react';
@@ -50,11 +51,9 @@ class App extends React.Component {
   getData() {
     const that = this;
     const stay = that.state.fees.days;
-    console.log('i ran');
     axios.get('/data')
       .then(({ data }) => {
         const res = data[0];
-        console.log(res);
         const total = res.cleaning_fee + res.service_fee + res.tax + (res.price * stay);
         this.setState({
           price: {
@@ -83,9 +82,9 @@ class App extends React.Component {
           <Price price={this.state.price} />
           <br />
           <Dates dates={this.state.dates} />
-          <br />
+          {/* <br /> */}
           <Guests guest-limit={this.state.guests} />
-          <br />
+          {/* <br /> */}
           <Fees fees={this.state.fees} />
           <br />
           <Button />

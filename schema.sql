@@ -24,10 +24,10 @@ CREATE TABLE reservations (
 
 
      -- home,price,rating,reviews,guest,clean,serv,tax
-INSERT INTO homes VALUES (1, 10, 1, 1, 1, 1, 1, 1);
-INSERT INTO homes VALUES (2, 20, 2, 2, 2, 2, 2, 2);
-INSERT INTO homes VALUES (3, 30, 3, 3, 3, 3, 3, 3);
-INSERT INTO homes VALUES (4, 40, 4, 4, 4, 4, 4, 4);
+INSERT INTO homes VALUES (1, 10, 1.1, 1, 1, 1, 1, 1);
+INSERT INTO homes VALUES (2, 20, 2.2, 2, 2, 2, 2, 2);
+INSERT INTO homes VALUES (3, 30, 3.3, 3, 3, 3, 3, 3);
+INSERT INTO homes VALUES (4, 40, 4.4, 4, 4, 4, 4, 4);
 INSERT INTO homes VALUES (5, 50, 5, 5, 5, 5, 5, 5);
 INSERT INTO homes VALUES (6, 60, 1, 6, 1, 6, 6, 6);
 INSERT INTO homes VALUES (7, 70, 2, 7, 2, 7, 7, 7);
@@ -125,9 +125,9 @@ INSERT INTO homes VALUES (98, 980, 4, 18, 18, 18, 18, 8);
 INSERT INTO homes VALUES (99, 990, 5, 19, 19, 19, 19, 9);
 INSERT INTO homes VALUES (100, 1000, 1, 10, 10, 10, 10, 1);
 
---ID,houseID,Start,End
--- INSERT INTO reservations
+-- --ID,houseID,Start,End
+-- -- INSERT INTO reservations
 
-INSERT INTO reservations VALUES (1, 1, 5/17/2020, 5/19/2020);
-INSERT INTO reservations VALUES (2, 1, 6/05/2020, 6/10/2020);
-INSERT INTO reservations VALUES (3, 1, 7/21/2020, 7/30/2020);
+-- INSERT INTO reservations VALUES (1, 1, 5/17/2020, 5/19/2020);
+-- INSERT INTO reservations VALUES (2, 1, 6/05/2020, 6/10/2020);
+-- INSERT INTO reservations VALUES (3, 1, 7/21/2020, 7/30/2020);

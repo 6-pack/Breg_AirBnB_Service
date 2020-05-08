@@ -1,22 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const rightStyle = {
-  alignSelf: 'stretch',
-};
-
-const Left = styled.section`
-  border-radius: 3px;
-  text-align: right;
-  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
-  font-size: 13px;
-`;
-const Right = styled.section`
-  border-radius: 3px;
-  text-align: left;
-  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
-  font-size: 13px;
-`;
 
 class Fees extends React.Component {
   constructor(props) {
@@ -28,52 +12,105 @@ class Fees extends React.Component {
 
   render() {
     return (
-      <div className="format">
+      <Format>
         <div>
-          <p className="alignleft">
-            ${this.props.fees.price} x {this.props.fees.days} nights
-          </p>
-          <p className="alignright">
-            ${this.props.fees.price * this.props.fees.days}
-          </p>
+          <Aleft>
+            ${this.props.fees.price}
+            {' '}
+            x
+            {' '}
+            {this.props.fees.days}
+            {' '}
+            nights
+          </Aleft>
+          <Aright>
+            $
+            {this.props.fees.price * this.props.fees.days}
+          </Aright>
         </div>
         {/* <hr class="clear" /> */}
-        <div className="bb clear">
-          <p className="alignleft">
-            Cleaning fee <img src="rbi.png" alt="" width="17" height="17" />
-          </p>
-          <p className="alignright">
-            ${this.props.fees.cleaning}
-          </p>
-        </div>
-        <div className="bb clear">
-          <p className="alignleft">
-            Service fee <img src="rbi.png" alt="" width="17" height="17" />
-          </p>
-          <p className="alignright">
+        <Border>
+          <Aleft>
+            Cleaning fee
+            {' '}
+            <img src="rbi.png" alt="" width="17" height="17" />
+          </Aleft>
+          <Aright>
+            $
+            {this.props.fees.cleaning}
+          </Aright>
+        </Border>
+        <Border>
+          <Aleft>
+            Service fee
+            {' '}
+            <img src="rbi.png" alt="" width="17" height="17" />
+          </Aleft>
+          <Aright>
             ${this.props.fees.service}
-          </p>
-        </div>
-        <div className="bb clear">
-          <p className="alignleft">
-            Occupancy taxes and fees <img src="rbi.png" alt="" width="17" height="17" />
-          </p>
-          <p className="alignright">
-            ${this.props.fees.tax}
-          </p>
-        </div>
-        <div className="bb clear total">
-          <p className="alignleft">
+          </Aright>
+        </Border>
+        <Border>
+          <Aleft>
+            Occupancy taxes and fees
+            {' '}
+            <img src="rbi.png" alt="" width="17" height="17" />
+          </Aleft>
+          <Aright>
+            $
+            {this.props.fees.tax}
+          </Aright>
+        </Border>
+        <Total>
+          <Aleft>
             Total
-          </p>
-          <p className="alignright">
-            ${this.props.fees.total}
-          </p>
-        </div>
-        <br className="clear" />
-      </div>
+          </Aleft>
+          <Aright>
+            $
+            {this.props.fees.total}
+          </Aright>
+        </Total>
+        <Clear />
+      </Format>
     );
   }
 }
 
 export default Fees;
+
+const Clear = styled.div`
+  clear: both;
+`;
+
+const Border = styled.div`
+border-bottom-style: solid !important;
+border-bottom-width: var(--border-rule-border-width, 1px) !important;
+border-bottom-color: var(--color-divider, #EBEBEB) !important;
+clear: both;
+`;
+
+const Total = styled.div`
+border-bottom-style: solid !important;
+border-bottom-width: var(--border-rule-border-width, 1px) !important;
+border-bottom-color: var(--color-divider, #EBEBEB) !important;
+font-weight: 600 !important;
+clear: both;
+`;
+
+
+const Format = styled.div`
+  overflow-wrap: break-word !important;
+  font-family: "Circular", "-apple-system", "BlinkMacSystemFont", "Roboto", "Helvetica Neue", sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 300 !important;
+  line-height: 1.28571em !important;
+  color: rgb(72, 72, 72) !important;
+`;
+
+const Aleft = styled.p`
+  float: left;
+`;
+
+const Aright = styled.p`
+  float: right;
+`;
