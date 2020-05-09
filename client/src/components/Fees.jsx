@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import styled from 'styled-components';
 
@@ -11,21 +12,24 @@ class Fees extends React.Component {
   }
 
   render() {
+    const { price, days, cleaning, service, tax, total} = this.props.fees;
+
     return (
       <Format>
         <div>
           <Aleft>
-            ${this.props.fees.price}
+            $
+            {price}
             {' '}
             x
             {' '}
-            {this.props.fees.days}
+            {days}
             {' '}
             nights
           </Aleft>
           <Aright>
             $
-            {this.props.fees.price * this.props.fees.days}
+            {price * days}
           </Aright>
         </div>
         {/* <hr class="clear" /> */}
@@ -37,7 +41,7 @@ class Fees extends React.Component {
           </Aleft>
           <Aright>
             $
-            {this.props.fees.cleaning}
+            {cleaning}
           </Aright>
         </Border>
         <Border>
@@ -47,7 +51,8 @@ class Fees extends React.Component {
             <img src="rbi.png" alt="" width="17" height="17" />
           </Aleft>
           <Aright>
-            ${this.props.fees.service}
+            $
+            {service}
           </Aright>
         </Border>
         <Border>
@@ -58,7 +63,7 @@ class Fees extends React.Component {
           </Aleft>
           <Aright>
             $
-            {this.props.fees.tax}
+            {tax}
           </Aright>
         </Border>
         <Total>
@@ -67,7 +72,7 @@ class Fees extends React.Component {
           </Aleft>
           <Aright>
             $
-            {this.props.fees.total}
+            {total}
           </Aright>
         </Total>
         <Clear />

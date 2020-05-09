@@ -10,14 +10,6 @@ import Guests from './Guests.jsx';
 import Fees from './Fees.jsx';
 import Button from './Button.jsx';
 
-const Boxed = styled.section`
-  padding: 2em;
-  background: white;
-  border: 1px solid;
-  border-color: lightgray;
-  border-radius: 1px;
-`;
-
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -71,30 +63,53 @@ class App extends React.Component {
             total,
           },
         });
+        console.log(that.state);
       });
+  }
+
+  clearDates() {
+    console.log("RAN");
+    this.setState({
+      dates: {
+        startDate: 'Check-in',
+        endDate: 'Checkout',
+      },
+    });
   }
 
 
   render() {
     return (
-      <div className="width">
+      <Main>
         <Boxed>
           <Price price={this.state.price} />
           <br />
-          <Dates dates={this.state.dates} />
+          <Dates dates={this.state.dates} clear={this.clearDates.bind(this)} />
           {/* <br /> */}
-          <Guests guest-limit={this.state.guests} />
+          <Guests guests={this.state.guests} />
           {/* <br /> */}
           <Fees fees={this.state.fees} />
           <br />
           <Button />
         </Boxed>
-      </div>
+      </Main>
     );
   }
 }
 
 export default App;
+
+const Main = styled.div`
+  width: 425px;
+`;
+
+const Boxed = styled.section`
+  padding: 2em;
+  background: white;
+  border: 1px solid;
+  border-color: lightgray;
+  border-radius: 1px;
+`;
 
 // const divStyle = {
 //   color: 'red',
