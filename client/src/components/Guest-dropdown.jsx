@@ -21,7 +21,7 @@ class Dropdown extends React.Component {
             <Item name="Children" click={this.props.click} nums={this.props.nums} />
             <Item name="Infants" click={this.props.click} nums={this.props.nums} />
           </Margin1>
-          <Message>6 guests maximum. Infants don’t count toward the number of guests.</Message>
+          <Message>{this.props.nums.max} guests maximum. Infants don’t count toward the number of guests.</Message>
           <Close onClick={this.props.close}>Close</Close>
         </Dpdn>
       );

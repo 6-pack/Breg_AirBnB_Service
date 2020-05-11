@@ -152,6 +152,7 @@ const Gbox = styled.div`
   font-size: 17px;
   margin-top: auto;
   margin-bottom: auto;
+  cursor: pointer;
   font-family: "Circular", "-apple-system", "BlinkMacSystemFont", "Roboto", "Helvetica Neue", sans-serif !important;
 `;
 

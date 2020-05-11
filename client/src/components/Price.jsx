@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import styled from 'styled-components';
 
@@ -12,17 +13,25 @@ class Price extends React.Component {
 
 
   render() {
+    const { price, rating, reviews } = this.props.price;
     return (
       <Border>
         <div>
-          <Pr>${this.props.price.price} </Pr>
+          <Pr>
+            $
+            { price }
+            {' '}
+          </Pr>
           <Label>per night</Label>
         </div>
         <div>
           <Star>★</Star>
-          <Label>{this.props.price.rating}</Label>
-          <Rating >
-            ({this.props.price.reviews} reviews)
+          <Label>{ rating }</Label>
+          <Rating>
+            (
+            {reviews}
+            {' '}
+            reviews)
           </Rating>
         </div>
         <br />

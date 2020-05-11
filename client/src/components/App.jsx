@@ -1,4 +1,5 @@
-/* eslint-disable react/destructuring-assignment */
+/* eslint-disable no-restricted-globals */
+/* eslint-disable react/jsx-no-bind */
 /* eslint-disable import/extensions */
 /* eslint-disable no-undef */
 import React from 'react';
@@ -9,6 +10,7 @@ import Dates from './Dates.jsx';
 import Guests from './Guests.jsx';
 import Fees from './Fees.jsx';
 import Button from './Button.jsx';
+// import NewCal from './NewCal.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -33,6 +35,7 @@ class App extends React.Component {
         tax: 51,
         total: 402,
       },
+      calOpen: false,
     };
   }
 
@@ -67,8 +70,32 @@ class App extends React.Component {
       });
   }
 
+  toggleOpen() {
+    const tar = event.target.innerHTML;
+    const that = this;
+    console.log('EVENT', event.target.tagName);
+    console.log(tar);
+    if (tar === 'Check-in' || tar === 'Checkout') {
+      console.log('RANN');
+      const current = that.state.calOpen;
+      that.setState({ calOpen: !current });
+    }
+    // else {
+    //   console.log("NNAR");
+    //   that.setState({ calOpen: false });
+    // }
+    // that.setState({ calOpen: true });
+    console.log('Open:', that.state.calOpen);
+  }
+
+  toggleClose() {
+    const that = this;
+    // this.setState({ calOpen: false });
+    console.log(that.state.calOpen);
+  }
+
   clearDates() {
-    console.log("RAN");
+    console.log('RAN');
     this.setState({
       dates: {
         startDate: 'Check-in',
@@ -79,16 +106,30 @@ class App extends React.Component {
 
 
   render() {
+    // const toggleClose = this.toggleClose.bind(this);
+    const toggleOpen = this.toggleOpen.bind(this);
+    const clearDates = this.clearDates.bind(this);
+    const {
+      price, dates, calOpen, guests, fees,
+    } = this.state;
+
     return (
-      <Main>
+      <Main onClick={toggleOpen}>
         <Boxed>
-          <Price price={this.state.price} />
+          <Price price={price} />
           <br />
-          <Dates dates={this.state.dates} clear={this.clearDates.bind(this)} />
+          {/* <NewCal />
+          <br /> */}
+          <Dates
+            dates={dates}
+            open={calOpen}
+            click={toggleOpen}
+            clear={clearDates}
+          />
           {/* <br /> */}
-          <Guests guests={this.state.guests} />
+          <Guests guests={guests} />
           {/* <br /> */}
-          <Fees fees={this.state.fees} />
+          <Fees fees={fees} />
           <br />
           <Button />
         </Boxed>

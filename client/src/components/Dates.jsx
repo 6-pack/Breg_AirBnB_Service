@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-bind */
 /* eslint-disable react/destructuring-assignment */
 import React from 'react';
 import styled from 'styled-components';
@@ -12,18 +13,20 @@ class Dates extends React.Component {
     };
   }
 
-  clickHandler () {
-    const that = this;
-    console.log('CLICK!!');
-    if (that.state.open) {
-      that.setState({ open: false });
-    } else {
-      that.setState({ open: true });
-    }
-    console.log(that.state);
+  clickHandler() {
+    // const that = this;
+    // console.log('CLICK!!');
+    // if (that.state.open) {
+    //   that.setState({ open: false });
+    // } else {
+    //   that.setState({ open: true });
+    // }
+    // console.log(that.state);
+    this.props.click();
   }
 
   render() {
+    const clickHandler = this.clickHandler.bind(this);
     return (
       <Format>
         <Label>Dates</Label>
@@ -38,7 +41,8 @@ class Dates extends React.Component {
             {this.props.dates.endDate}
           </Leftbox>
         </Stylediv>
-        <Calendar open={this.state.open} click={this.clickHandler.bind(this)} clear ={this.props.clear} />
+        <Calendar open={this.props.open} click={clickHandler} clear ={this.props.clear} />
+
         <Clear />
       </Format>
     );

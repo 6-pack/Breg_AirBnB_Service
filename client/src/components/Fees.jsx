@@ -12,7 +12,9 @@ class Fees extends React.Component {
   }
 
   render() {
-    const { price, days, cleaning, service, tax, total} = this.props.fees;
+    const {
+      price, days, cleaning, service, tax, total,
+    } = this.props.fees;
 
     return (
       <Format>
@@ -37,7 +39,7 @@ class Fees extends React.Component {
           <Aleft>
             Cleaning fee
             {' '}
-            <img src="rbi.png" alt="" width="17" height="17" />
+            <Img src="rbi.png" alt="" width="17" height="17" />
           </Aleft>
           <Aright>
             $
@@ -48,7 +50,7 @@ class Fees extends React.Component {
           <Aleft>
             Service fee
             {' '}
-            <img src="rbi.png" alt="" width="17" height="17" />
+            <Img src="rbi.png" alt="" width="17" height="17" />
           </Aleft>
           <Aright>
             $
@@ -59,7 +61,7 @@ class Fees extends React.Component {
           <Aleft>
             Occupancy taxes and fees
             {' '}
-            <img src="rbi.png" alt="" width="17" height="17" />
+            <Img src="rbi.png" alt="" width="17" height="17" />
           </Aleft>
           <Aright>
             $
@@ -82,6 +84,13 @@ class Fees extends React.Component {
 }
 
 export default Fees;
+
+const Img = styled.img`
+  cursor: pointer;
+  :hover, :active {
+    filter: sepia(100%) hue-rotate(190deg) saturate(500%);
+  };
+`;
 
 const Clear = styled.div`
   clear: both;

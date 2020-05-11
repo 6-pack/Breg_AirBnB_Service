@@ -1,9 +1,11 @@
+// import css from 'file.css';
+
 module.exports = {
   entry: `${__dirname}/client/src/index.jsx`,
   module: {
     rules: [
       {
-        test: [/\.jsx$/],
+        test: /\.jsx$/,
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
@@ -19,3 +21,9 @@ module.exports = {
     path: `${__dirname}/client/dist`,
   },
 };
+
+
+// {
+//   test: /\css$/,
+//   loader: ['css-loader', 'style-loader'],
+// },
