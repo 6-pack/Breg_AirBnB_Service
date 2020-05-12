@@ -44,4 +44,4 @@ class Index extends React.Component {
 }
 
 
-ReactDOM.render(<Index />, document.getElementById('Reservation'));
+ReactDOM.render(<Index />, document.getElementById('Breg'));
