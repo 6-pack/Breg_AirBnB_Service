@@ -10,7 +10,7 @@ import Dates from './Dates.jsx';
 import Guests from './Guests.jsx';
 import Fees from './Fees.jsx';
 import Button from './Button.jsx';
-// import NewCal from './NewCal.jsx';
+import NewCal from './NewCal.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -73,10 +73,10 @@ class App extends React.Component {
   toggleOpen() {
     const tar = event.target.innerHTML;
     const that = this;
-    console.log('EVENT', event.target.tagName);
-    console.log(tar);
+    // console.log('EVENT', event.target.tagName);
+    // console.log(tar);
     if (tar === 'Check-in' || tar === 'Checkout') {
-      console.log('RANN');
+      // console.log('RANN');
       const current = that.state.calOpen;
       that.setState({ calOpen: !current });
     }
@@ -85,13 +85,13 @@ class App extends React.Component {
     //   that.setState({ calOpen: false });
     // }
     // that.setState({ calOpen: true });
-    console.log('Open:', that.state.calOpen);
+    // console.log('Open:', that.state.calOpen);
   }
 
   toggleClose() {
     const that = this;
     // this.setState({ calOpen: false });
-    console.log(that.state.calOpen);
+    // console.log(that.state.calOpen);
   }
 
   clearDates() {
@@ -117,15 +117,15 @@ class App extends React.Component {
       <Main onClick={toggleOpen}>
         <Boxed>
           <Price price={price} />
-          <br />
-          {/* <NewCal />
-          <br /> */}
-          <Dates
+          <Br />
+          <NewCal />
+          <Br />
+          {/* <Dates
             dates={dates}
             open={calOpen}
             click={toggleOpen}
             clear={clearDates}
-          />
+          /> */}
           {/* <br /> */}
           <Guests guests={guests} />
           {/* <br /> */}
@@ -139,6 +139,11 @@ class App extends React.Component {
 }
 
 export default App;
+
+const Br = styled.div`
+  height: 10px;
+`;
+
 
 const Main = styled.div`
   width: 425px;
