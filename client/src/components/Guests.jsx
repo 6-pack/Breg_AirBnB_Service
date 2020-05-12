@@ -14,7 +14,7 @@ class Guests extends React.Component {
       Children: 0,
       Infants: 0,
       infantText: '',
-      max: 4,
+      max: this.props.guests,
       guests: 1,
       noun: 'guest',
     };
@@ -140,7 +140,6 @@ const Label = styled.div`
 `;
 
 const Gbox = styled.div`
-  width: 95%;
   display: grid;
   grid-template-columns: 1fr 1fr;
   border: 1px solid;
@@ -153,6 +152,7 @@ const Gbox = styled.div`
   font-size: 17px;
   margin-top: auto;
   margin-bottom: auto;
+  cursor: pointer;
   font-family: "Circular", "-apple-system", "BlinkMacSystemFont", "Roboto", "Helvetica Neue", sans-serif !important;
 `;
 

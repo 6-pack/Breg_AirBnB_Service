@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import styled from 'styled-components';
 
@@ -11,21 +12,26 @@ class Fees extends React.Component {
   }
 
   render() {
+    const {
+      price, days, cleaning, service, tax, total,
+    } = this.props.fees;
+
     return (
       <Format>
         <div>
           <Aleft>
-            ${this.props.fees.price}
+            $
+            {price}
             {' '}
             x
             {' '}
-            {this.props.fees.days}
+            {days}
             {' '}
             nights
           </Aleft>
           <Aright>
             $
-            {this.props.fees.price * this.props.fees.days}
+            {price * days}
           </Aright>
         </div>
         {/* <hr class="clear" /> */}
@@ -33,32 +39,33 @@ class Fees extends React.Component {
           <Aleft>
             Cleaning fee
             {' '}
-            <img src="rbi.png" alt="" width="17" height="17" />
+            <Img src="rbi.png" alt="" width="17" height="17" />
           </Aleft>
           <Aright>
             $
-            {this.props.fees.cleaning}
+            {cleaning}
           </Aright>
         </Border>
         <Border>
           <Aleft>
             Service fee
             {' '}
-            <img src="rbi.png" alt="" width="17" height="17" />
+            <Img src="rbi.png" alt="" width="17" height="17" />
           </Aleft>
           <Aright>
-            ${this.props.fees.service}
+            $
+            {service}
           </Aright>
         </Border>
         <Border>
           <Aleft>
             Occupancy taxes and fees
             {' '}
-            <img src="rbi.png" alt="" width="17" height="17" />
+            <Img src="rbi.png" alt="" width="17" height="17" />
           </Aleft>
           <Aright>
             $
-            {this.props.fees.tax}
+            {tax}
           </Aright>
         </Border>
         <Total>
@@ -67,7 +74,7 @@ class Fees extends React.Component {
           </Aleft>
           <Aright>
             $
-            {this.props.fees.total}
+            {total}
           </Aright>
         </Total>
         <Clear />
@@ -77,6 +84,13 @@ class Fees extends React.Component {
 }
 
 export default Fees;
+
+const Img = styled.img`
+  cursor: pointer;
+  :hover, :active {
+    filter: sepia(100%) hue-rotate(190deg) saturate(500%);
+  };
+`;
 
 const Clear = styled.div`
   clear: both;

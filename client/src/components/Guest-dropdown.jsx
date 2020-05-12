@@ -1,3 +1,5 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable react/destructuring-assignment */
 import React from 'react';
 import styled from 'styled-components';
 
@@ -19,7 +21,7 @@ class Dropdown extends React.Component {
             <Item name="Children" click={this.props.click} nums={this.props.nums} />
             <Item name="Infants" click={this.props.click} nums={this.props.nums} />
           </Margin1>
-          <Message>6 guests maximum. Infants don’t count toward the number of guests.</Message>
+          <Message>{this.props.nums.max} guests maximum. Infants don’t count toward the number of guests.</Message>
           <Close onClick={this.props.close}>Close</Close>
         </Dpdn>
       );
@@ -42,16 +44,21 @@ const Item = function ({ name, click, nums}) {
         <Center>{name}</Center>
         <Normal>{text}</Normal>
       </Grid2>
-      <Autom>
+      <Right>
         <Asde onClick={() => { click('-', name); }}>—</Asde>
         <Margin>{nums[name]}</Margin>
         <Asde onClick={() => { click('+', name); }}>＋</Asde>
-      </Autom>
+      </Right>
     </Grid>
   );
 };
 
 export default Dropdown;
+
+const Right = styled.div`
+  text-align: right;
+  margin-right: 15px;
+`;
 
 const Close = styled.button`
   float: right;
@@ -72,6 +79,7 @@ const Message = styled.div`
 `;
 
 const Dpdn = styled.div`
+  width: 357px;
   position: absolute;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 6px, rgba(0, 0, 0, 0.07) 0px 0px 0px 1px !important;
   border: 1px solid;
@@ -108,11 +116,12 @@ const Asde = styled.button`
 
 const Autom = styled.div`
   margin: auto;
+  text-align: right;
 `;
 
 const Grid = styled.div`
   display: grid;
-  grid-template-columns: 65% 35%;
+  grid-template-columns: auto auto;
   margin-top: 16px;
   margin-bottom: 16px;
 `;

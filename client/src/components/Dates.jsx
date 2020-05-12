@@ -1,29 +1,48 @@
+/* eslint-disable react/jsx-no-bind */
+/* eslint-disable react/destructuring-assignment */
 import React from 'react';
 import styled from 'styled-components';
+import Calendar from './Calendar.jsx';
 
 class Dates extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
+      open: false,
     };
   }
 
+  clickHandler() {
+    // const that = this;
+    // console.log('CLICK!!');
+    // if (that.state.open) {
+    //   that.setState({ open: false });
+    // } else {
+    //   that.setState({ open: true });
+    // }
+    // console.log(that.state);
+    this.props.click();
+  }
+
   render() {
+    const clickHandler = this.clickHandler.bind(this);
     return (
       <Format>
         <Label>Dates</Label>
         <Stylediv>
-          <Leftbox>
+          <Leftbox onClick={this.clickHandler.bind(this)}>
             {this.props.dates.startDate}
           </Leftbox>
           <Leftbox>
             <img src="arrow.png" alt="" width="35px" height="20px" />
           </Leftbox>
-          <Leftbox>
+          <Leftbox onClick={this.clickHandler.bind(this)}>
             {this.props.dates.endDate}
           </Leftbox>
         </Stylediv>
+        <Calendar open={this.props.open} click={clickHandler} clear ={this.props.clear} />
+
         <Clear />
       </Format>
     );
