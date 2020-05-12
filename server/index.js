@@ -9,6 +9,11 @@ app.use(express.static(`${__dirname}/../client/dist`));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+  next();
+});
 
 app.get('/data', (req, res) => {
   const queryStr = 'SELECT * FROM homes';

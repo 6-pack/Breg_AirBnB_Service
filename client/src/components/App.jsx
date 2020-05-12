@@ -46,7 +46,7 @@ class App extends React.Component {
   getData() {
     const that = this;
     const stay = that.state.fees.days;
-    axios.get('/data')
+    axios.get('http://localhost:3002/data')
       .then(({ data }) => {
         const res = data[0];
         const total = res.cleaning_fee + res.service_fee + res.tax + (res.price * stay);
