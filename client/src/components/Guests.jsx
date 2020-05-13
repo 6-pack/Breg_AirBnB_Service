@@ -40,6 +40,7 @@ class Guests extends React.Component {
     } else {
       that.setState({ open: true });
     }
+    that.setState({ max: that.props.guests });
     // console.log(that.state);
   }
 
@@ -115,6 +116,7 @@ class Guests extends React.Component {
   }
 
   render() {
+    console.log(this.state.max);
     return (
       <div>
         <Label>Guests</Label>

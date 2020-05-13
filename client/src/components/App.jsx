@@ -51,7 +51,7 @@ class App extends React.Component {
     const stay = that.state.fees.days;
     axios.get('/data')
       .then(({ data }) => {
-        const res = data[0];
+        const res = data[4];
         const total = res.cleaning_fee + res.service_fee + res.tax + (res.price * stay);
         this.setState({
           price: {
@@ -69,7 +69,7 @@ class App extends React.Component {
             total,
           },
         });
-        // console.log(that.state);
+        console.log(that.state);
       });
   }
 
