@@ -1,3 +1,7 @@
+/* eslint-disable react/jsx-no-bind */
+/* eslint-disable react/prop-types */
+/* eslint-disable react/destructuring-assignment */
+/* eslint-disable react/no-unused-state */
 /* eslint-disable import/extensions */
 import React from 'react';
 import styled from 'styled-components';
@@ -28,20 +32,20 @@ class Guests extends React.Component {
     }
   }
 
-  clickHandler () {
+  clickHandler() {
     const that = this;
-    console.log('CLICK!!');
+    // console.log('CLICK!!');
     if (that.state.open) {
       that.setState({ open: false });
     } else {
       that.setState({ open: true });
     }
-    console.log(that.state);
+    // console.log(that.state);
   }
 
   guestHandler(action, ele) {
     const that = this;
-    console.log(action, ele);
+    // console.log(action, ele);
     if (ele === 'Adults') {
       if (action === '-') {
         if (that.state.Adults > 1) {
@@ -107,7 +111,7 @@ class Guests extends React.Component {
         }
       }
     }
-    console.log(that.state);
+    // console.log(that.state);
   }
 
   render() {
@@ -115,11 +119,16 @@ class Guests extends React.Component {
       <div>
         <Label>Guests</Label>
         <Gbox onClick={this.clickHandler.bind(this)}>
-          {this.state.guests} {this.state.noun}{this.state.infantText}
+          {this.state.guests}
+          {' '}
+          {this.state.noun}
+          {this.state.infantText}
         </Gbox>
-        <Dropdown open={this.state.open}
+        <Dropdown
+          open={this.state.open}
           click={this.guestHandler.bind(this)}
-          nums={this.state} close={this.clickHandler.bind(this)}
+          nums={this.state}
+          close={this.clickHandler.bind(this)}
         />
         <Clear className="clear" />
       </div>

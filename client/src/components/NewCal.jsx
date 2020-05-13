@@ -1,10 +1,11 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable react/jsx-no-bind */
 /* eslint-disable react/destructuring-assignment */
-import React, { Component } from 'react';
+import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'react-dates/initialize';
 import 'react-dates/lib/css/_datepicker.css';
-import { DateRangePicker, SingleDatePicker, DayPickerRangeController } from 'react-dates';
+import { DateRangePicker } from 'react-dates';
 import styled from 'styled-components';
 
 
@@ -13,15 +14,15 @@ class NewCal extends React.Component {
     super(props);
 
     this.state = {
-      startDate: null,
-      endDate: null,
+      // startDate: null,
+      // endDate: null,
 
     };
   }
 
 
   render() {
-    const that = this.props.that;
+    const { that } = this.props;
     return (
       <div>
         <Label>Dates</Label>
@@ -30,13 +31,15 @@ class NewCal extends React.Component {
           startDateId="your_unique_start_date_id" // PropTypes.string.isRequired,
           endDate={that.state.endDate} // momentPropTypes.momentObj or null,
           endDateId="your_unique_end_date_id" // PropTypes.string.isRequired,
-          onDatesChange={({ startDate, endDate }) => that.setState({ startDate, endDate })} // PropTypes.func.isRequired,
+          onDatesChange={
+            ({ startDate, endDate }) => that.setState({ startDate, endDate })
+          } // PropTypes.func.isRequired,
           focusedInput={that.state.focusedInput} // PropTypes.oneOf([START_DATE, END_DATE]) or null,
           onFocusChange={(focusedInput) => that.setState({ focusedInput })}
           numberOfMonths={1}
           startDatePlaceholderText="Check-in"
           endDatePlaceholderText="Checkout"
-          block={true}
+          block
         />
       </div>
     );

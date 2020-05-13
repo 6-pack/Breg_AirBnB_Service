@@ -1,3 +1,5 @@
+/* eslint-disable no-underscore-dangle */
+/* eslint-disable react/destructuring-assignment */
 /* eslint-disable react/prop-types */
 import React from 'react';
 import styled from 'styled-components';
@@ -8,23 +10,23 @@ class Fees extends React.Component {
     super(props);
 
     this.state = {
-      days: 0,
+      // days: 0,
     };
   }
 
   render() {
     const {
-      price, days, cleaning, service, tax,
+      price, cleaning, service, tax,
     } = this.props.fees;
 
     if (this.props.open) {
       const b = this.props.start._d;
       const e = this.props.end._d;
-      const start = new Date (`${b.getMonth() + 1}/${b.getDate()}/${b.getFullYear()}`);
-      const end = new Date (`${e.getMonth() + 1}/${e.getDate()}/${e.getFullYear()}`);
+      const start = new Date(`${b.getMonth() + 1}/${b.getDate()}/${b.getFullYear()}`);
+      const end = new Date(`${e.getMonth() + 1}/${e.getDate()}/${e.getFullYear()}`);
       const timeDiff = Math.abs(end.getTime() - start.getTime());
       const nights = Math.ceil(timeDiff / (1000 * 3600 * 24));
-      console.log(nights);
+      // console.log(nights);
       const total = (price * nights) + cleaning + service + tax;
 
       return (
@@ -98,12 +100,12 @@ class Fees extends React.Component {
 
 export default Fees;
 
-const Center = styled.div`
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  height: 20px;
-`;
+// const Center = styled.div`
+//   display: flex;
+//   justify-content: center;
+//   flex-direction: column;
+//   height: 20px;
+// `;
 
 const Img = styled.img`
   cursor: pointer;

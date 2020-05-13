@@ -21,7 +21,10 @@ class Dropdown extends React.Component {
             <Item name="Children" click={this.props.click} nums={this.props.nums} />
             <Item name="Infants" click={this.props.click} nums={this.props.nums} />
           </Margin1>
-          <Message>{this.props.nums.max} guests maximum. Infants don’t count toward the number of guests.</Message>
+          <Message>
+            {`${this.props.nums.max} `}
+            guests maximum. Infants don’t count toward the number of guests.
+          </Message>
           <Close onClick={this.props.close}>Close</Close>
         </Dpdn>
       );
@@ -30,7 +33,7 @@ class Dropdown extends React.Component {
   }
 }
 
-const Item = function ({ name, click, nums}) {
+const Item = ({ name, click, nums }) => {
   let text = '';
   if (name === 'Children') {
     text = 'Ages 2–12';
@@ -114,10 +117,10 @@ const Asde = styled.button`
   margin: 5px;
 `;
 
-const Autom = styled.div`
-  margin: auto;
-  text-align: right;
-`;
+// const Autom = styled.div`
+//   margin: auto;
+//   text-align: right;
+// `;
 
 const Grid = styled.div`
   display: grid;

@@ -1,3 +1,5 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable import/extensions */
 /* eslint-disable react/jsx-no-bind */
 /* eslint-disable react/destructuring-assignment */
 import React from 'react';
@@ -9,7 +11,7 @@ class Dates extends React.Component {
     super(props);
 
     this.state = {
-      open: false,
+      // open: false,
     };
   }
 
@@ -41,7 +43,7 @@ class Dates extends React.Component {
             {this.props.dates.endDate}
           </Leftbox>
         </Stylediv>
-        <Calendar open={this.props.open} click={clickHandler} clear ={this.props.clear} />
+        <Calendar open={this.props.open} click={clickHandler} clear={this.props.clear} />
 
         <Clear />
       </Format>

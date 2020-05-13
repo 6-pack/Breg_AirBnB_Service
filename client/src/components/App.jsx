@@ -1,3 +1,4 @@
+/* eslint-disable react/destructuring-assignment */
 /* eslint-disable no-restricted-globals */
 /* eslint-disable react/jsx-no-bind */
 /* eslint-disable import/extensions */
@@ -22,10 +23,10 @@ class App extends React.Component {
         rating: 4.96,
         reviews: 191,
       },
-      dates: {
-        startDate: 'Check-in',
-        endDate: 'Checkout',
-      },
+      // dates: {
+      //   startDate: 'Check-in',
+      //   endDate: 'Checkout',
+      // },
       guests: 4,
       fees: {
         price: 104,
@@ -35,8 +36,7 @@ class App extends React.Component {
         tax: 51,
         total: 402,
       },
-      calOpen: false,
-      priceOpen: false,
+      // calOpen: false,
       startDate: null,
       endDate: null,
     };
@@ -96,30 +96,24 @@ class App extends React.Component {
     // console.log('Open:', that.state.calOpen);
   }
 
-  toggleClose() {
-    const that = this;
-    // this.setState({ calOpen: false });
-    // console.log(that.state.calOpen);
-  }
-
-  clearDates() {
-    console.log('RAN');
-    this.setState({
-      dates: {
-        startDate: 'Check-in',
-        endDate: 'Checkout',
-      },
-    });
-  }
+  // clearDates() {
+  //   // console.log('RAN');
+  //   this.setState({
+  //     dates: {
+  //       startDate: 'Check-in',
+  //       endDate: 'Checkout',
+  //     },
+  //   });
+  // }
 
 
   render() {
     // const toggleClose = this.toggleClose.bind(this);
     const open = this.state.startDate && this.state.endDate;
     const toggleOpen = this.toggleOpen.bind(this);
-    const clearDates = this.clearDates.bind(this);
+    // const clearDates = this.clearDates.bind(this);
     const {
-      price, dates, calOpen, guests, fees,
+      price, guests, fees,
     } = this.state;
 
     return (
@@ -135,8 +129,8 @@ class App extends React.Component {
           />
           <Br />
           {/* <Dates
-            dates={dates}
-            open={calOpen}
+            dates={this.state.dates}
+            open={this.state.calOpen}
             click={toggleOpen}
             clear={clearDates}
           /> */}
