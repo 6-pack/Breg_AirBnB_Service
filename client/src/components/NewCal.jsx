@@ -21,17 +21,18 @@ class NewCal extends React.Component {
 
 
   render() {
+    const that = this.props.that;
     return (
       <div>
         <Label>Dates</Label>
         <DateRangePicker
-          startDate={this.state.startDate} // momentPropTypes.momentObj or null,
+          startDate={that.state.startDate} // momentPropTypes.momentObj or null,
           startDateId="your_unique_start_date_id" // PropTypes.string.isRequired,
-          endDate={this.state.endDate} // momentPropTypes.momentObj or null,
+          endDate={that.state.endDate} // momentPropTypes.momentObj or null,
           endDateId="your_unique_end_date_id" // PropTypes.string.isRequired,
-          onDatesChange={({ startDate, endDate }) => this.setState({ startDate, endDate })} // PropTypes.func.isRequired,
-          focusedInput={this.state.focusedInput} // PropTypes.oneOf([START_DATE, END_DATE]) or null,
-          onFocusChange={(focusedInput) => this.setState({ focusedInput })}
+          onDatesChange={({ startDate, endDate }) => that.setState({ startDate, endDate })} // PropTypes.func.isRequired,
+          focusedInput={that.state.focusedInput} // PropTypes.oneOf([START_DATE, END_DATE]) or null,
+          onFocusChange={(focusedInput) => that.setState({ focusedInput })}
           numberOfMonths={1}
           startDatePlaceholderText="Check-in"
           endDatePlaceholderText="Checkout"

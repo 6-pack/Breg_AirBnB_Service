@@ -8,82 +8,102 @@ class Fees extends React.Component {
     super(props);
 
     this.state = {
+      days: 0,
     };
   }
 
   render() {
     const {
-      price, days, cleaning, service, tax, total,
+      price, days, cleaning, service, tax,
     } = this.props.fees;
 
-    return (
-      <Format>
-        <div>
-          <Aleft>
-            $
-            {price}
-            {' '}
-            x
-            {' '}
-            {days}
-            {' '}
-            nights
-          </Aleft>
-          <Aright>
-            $
-            {price * days}
-          </Aright>
-        </div>
-        {/* <hr class="clear" /> */}
-        <Border>
-          <Aleft>
-            Cleaning fee
-            {' '}
-            <Img src="rbi.png" alt="" width="17" height="17" />
-          </Aleft>
-          <Aright>
-            $
-            {cleaning}
-          </Aright>
-        </Border>
-        <Border>
-          <Aleft>
-            Service fee
-            {' '}
-            <Img src="rbi.png" alt="" width="17" height="17" />
-          </Aleft>
-          <Aright>
-            $
-            {service}
-          </Aright>
-        </Border>
-        <Border>
-          <Aleft>
-            Occupancy taxes and fees
-            {' '}
-            <Img src="rbi.png" alt="" width="17" height="17" />
-          </Aleft>
-          <Aright>
-            $
-            {tax}
-          </Aright>
-        </Border>
-        <Total>
-          <Aleft>
-            Total
-          </Aleft>
-          <Aright>
-            $
-            {total}
-          </Aright>
-        </Total>
-        <Clear />
-      </Format>
-    );
+    if (this.props.open) {
+      const b = this.props.start._d;
+      const e = this.props.end._d;
+      const start = new Date (`${b.getMonth() + 1}/${b.getDate()}/${b.getFullYear()}`);
+      const end = new Date (`${e.getMonth() + 1}/${e.getDate()}/${e.getFullYear()}`);
+      const timeDiff = Math.abs(end.getTime() - start.getTime());
+      const nights = Math.ceil(timeDiff / (1000 * 3600 * 24));
+      console.log(nights);
+      const total = (price * nights) + cleaning + service + tax;
+
+      return (
+        <Format>
+          <div>
+            <Aleft>
+              $
+              {price}
+              {' '}
+              x
+              {' '}
+              {nights}
+              {' '}
+              nights
+            </Aleft>
+            <Aright>
+              $
+              {price * nights}
+            </Aright>
+          </div>
+          {/* <hr class="clear" /> */}
+          <Border>
+            <Aleft>
+              Cleaning fee
+              {' '}
+              <Img src="rbi.png" alt="" width="17" height="17" />
+            </Aleft>
+            <Aright>
+              $
+              {cleaning}
+            </Aright>
+          </Border>
+          <Border>
+            <Aleft>
+              Service fee
+              {' '}
+              <Img src="rbi.png" alt="" width="17" height="17" />
+            </Aleft>
+            <Aright>
+              $
+              {service}
+            </Aright>
+          </Border>
+          <Border>
+            <Aleft>
+              Occupancy taxes and fees
+              {' '}
+              <Img src="rbi.png" alt="" width="17" height="17" />
+            </Aleft>
+            <Aright>
+              $
+              {tax}
+            </Aright>
+          </Border>
+          <Total>
+            <Aleft>
+              Total
+            </Aleft>
+            <Aright>
+              $
+              {total}
+            </Aright>
+          </Total>
+          <Clear />
+        </Format>
+      );
+    }
+    return null;
   }
 }
 
 export default Fees;
+
+const Center = styled.div`
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 20px;
+`;
 
 const Img = styled.img`
   cursor: pointer;
@@ -102,6 +122,7 @@ border-bottom-width: var(--border-rule-border-width, 1px) !important;
 border-bottom-color: var(--color-divider, #EBEBEB) !important;
 clear: both;
 `;
+
 
 const Total = styled.div`
 border-bottom-style: solid !important;
@@ -123,8 +144,12 @@ const Format = styled.div`
 
 const Aleft = styled.p`
   float: left;
+  margin-top: 3%;
+  margin-bottom: 3%;
 `;
 
 const Aright = styled.p`
   float: right;
+  margin-top: 3%;
+  margin-bottom: 3%;
 `;

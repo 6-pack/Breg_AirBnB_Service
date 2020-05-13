@@ -11,7 +11,8 @@
     "lint": "./node_modules/.bin/eslint",
     "seed": "psql -U postgres < schema.sql",
     "react-dev": "webpack -d --watch",
-    "start": "nodemon server/index.js",
+    "start": "node server/index.js",
+    "server-dev": "nodemon server/index.js",
     "test": "jest"
   },
   "dependencies": {
