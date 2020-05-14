@@ -69,7 +69,7 @@ class App extends React.Component {
             total,
           },
         });
-        console.log(that.state);
+        // console.log(that.state);
       });
   }
 

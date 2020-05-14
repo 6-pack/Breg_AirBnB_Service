@@ -116,7 +116,7 @@ class Guests extends React.Component {
   }
 
   render() {
-    console.log(this.state.max);
+    // console.log(this.state.max);
     return (
       <div>
         <Label>Guests</Label>
