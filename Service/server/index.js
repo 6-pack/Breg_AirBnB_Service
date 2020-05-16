@@ -15,6 +15,12 @@ app.use((req, res, next) => {
   next();
 });
 
+app.get('*.js', function (req, res, next) {
+  req.url = req.url + '.gz';
+  res.set('Content-Encoding', 'gzip');
+  next();
+});
+
 app.get('/data', (req, res) => {
   const queryStr = 'SELECT * FROM homes';
 

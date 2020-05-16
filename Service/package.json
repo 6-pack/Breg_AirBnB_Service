@@ -47,6 +47,7 @@
     "babel-core": "^6.26.3",
     "babel-jest": "^25.5.1",
     "babel-loader": "^8.1.0",
+    "compression-webpack-plugin": "^4.0.0",
     "css-loader": "^3.5.3",
     "date-fns": "^2.13.0",
     "enzyme": "^3.11.0",
