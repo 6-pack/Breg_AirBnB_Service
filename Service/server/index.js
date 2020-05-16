@@ -1,11 +1,11 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const db = require('../database/index.js');
+const expressStaticGzip = require('express-static-gzip');
 
 
 const app = express();
 
-app.use(express.static(`${__dirname}/../client/dist`));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
@@ -15,12 +15,7 @@ app.use((req, res, next) => {
   next();
 });
 
-app.get('*.js', function (req, res, next) {
-  req.url = req.url + '.gz';
-  res.set('Content-Encoding', 'gzip');
-  next();
-});
-
+app.use('/', expressStaticGzip(`${__dirname}/../client/dist`));
 app.get('/data', (req, res) => {
   const queryStr = 'SELECT * FROM homes';
 
